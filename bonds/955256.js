@@ -7,7 +7,7 @@
     transfer amount
 */
 module.exports.serverless = async function (email, bond_id) {
-    const bond = await db.kv('/custodian').get('bond:'+bond_id)
+    const bond = await db.kv('/custodian').get('bond:'+bond_id);
     
     if(JSON.parse(bond).status==false) {
         console.log(false);

@@ -3,7 +3,7 @@
     pass in id with amount, reduce balance, increase balance
 */
 module.exports.serverless = async function (email, amount, bond_id) {
-    const bond = await db.kv('/custodian').get('bond:'+bond_id)
+    const bond = await db.kv('/custodian').get('bond:'+bond_id);
     
     if(JSON.parse(bond).status==false) {
         console.log(false);

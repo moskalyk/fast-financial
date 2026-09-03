@@ -4,13 +4,13 @@
     TODO: calculate with start date and save frequency as value
 */
 module.exports.serverless = async function (email, amount) {
-    const credit = await db.kv('/custodian').get('sinusodial:'+email)
-    const endingPeriod = await db.kv('/custodian').get('sinusodial:'+email + ':endingPeriod')
+    const credit = await db.kv('/custodian').get('sinusodial:'+email);
+    const endingPeriod = await db.kv('/custodian').get('sinusodial:'+email + ':endingPeriod');
     
     if(JSON.parse(credit).status==false) {
         console.log(false);
     } else {
-        const time = (endingPeriod- Date.now()) / 1000
+        const time = (endingPeriod- Date.now()) / 1000;
         const frequency = 2628000000; /* 1 month */
         const x = time * 2 * Math.PI * frequency;
         const credit = await db.kv('/custodian').get('sinusodial:'+email);
