@@ -16,7 +16,7 @@ module.exports.serverless = async function (email, amount, bond_id) {
             } else {
                 const bondExisting = await db.kv('/custodian').get('bond:'+bond_id+":"+email);
                 
-                if(JSON.parse(amt).status==false){
+                if(JSON.parse(bondExisting).status==false){
                     await db.kv('/custodian').put('bond:'+bond_id+":"+email, 1);
                 } else {
                     await db.kv('/custodian').put('bond:'+bond_id+":"+email, Number(JSON.parse(bondExisting).v)+1);
