@@ -1,0 +1,27 @@
+{
+  "name": "fast-financial",
+  "version": "0.1.0",
+  "description": "a suite of financial tools",
+  "keywords": [
+    "fintech",
+    "vfaas",
+    "serverless",
+    "replicated",
+    "data",
+    "bonds"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "github.com/moskalyk/fast-financial"
+  },
+  "license": "MIT",
+  "author": "Nero",
+  "type": "commonjs",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node tests/*.test.js"
+  }
+}
